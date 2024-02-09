@@ -4,6 +4,8 @@ from math import *
 # from functools import reduce
 from bisect import bisect_right
 from heapq import *
+from typing import Optional
+
 # from itertools import permutations
 cin = stdin.readline
 cout = stdout.write
@@ -80,8 +82,9 @@ def helperForMemotization(
     word2: str,
     first: int,
     second: int,
-    memo: dict = dict(),
+    memo: Optional[dict] = None,
 ):
+    memo = {} if memo is None else memo
     len1 = len(word1)
     len2 = len(word2)
 
